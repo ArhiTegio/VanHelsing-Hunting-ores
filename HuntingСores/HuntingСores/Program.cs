@@ -62,7 +62,913 @@ namespace HuntingСores
                 } },
         };
 
-        private static Dictionary<TypeCharacteristic, List<string>> _texts = new Dictionary<TypeCharacteristic, List<string>>
+        private static Dictionary<TypeCharacteristic, Dictionary<Danger, List<string>>> _textsEventsHuntingToMonster = new Dictionary<TypeCharacteristic, Dictionary<Danger, List<string>>>
+        {
+            { TypeCharacteristic.Attraction, new Dictionary<Danger, List<string>>
+            {
+                { 
+                    Danger.VeryLow, 
+                    new List<string> 
+                    {
+                        "Случилось неожиданное событие Attraction. VeryLow - 1",
+                        "Случилось неожиданное событие Attraction. VeryLow - 2",
+                        "Случилось неожиданное событие Attraction. VeryLow - 3",
+                        "Случилось неожиданное событие Attraction. VeryLow - 4",
+                        "Случилось неожиданное событие Attraction. VeryLow - 5",
+                    } 
+                },
+                {
+                    Danger.Low,
+                    new List<string>
+                    {
+                        "Случилось неожиданное событие Attraction. Low - 1",
+                        "Случилось неожиданное событие Attraction. Low - 2",
+                        "Случилось неожиданное событие Attraction. Low - 3",
+                        "Случилось неожиданное событие Attraction. Low - 4",
+                        "Случилось неожиданное событие Attraction. Low - 5",
+                    }
+                },
+                {
+                    Danger.Average,
+                    new List<string>
+                    {
+                        "Случилось неожиданное событие Attraction. Average - 1",
+                        "Случилось неожиданное событие Attraction. Average - 2",
+                        "Случилось неожиданное событие Attraction. Average - 3",
+                        "Случилось неожиданное событие Attraction. Average - 4",
+                        "Случилось неожиданное событие Attraction. Average - 5",
+                    }
+                },
+                {
+                    Danger.High,
+                    new List<string>
+                    {
+                        "Случилось неожиданное событие Attraction. High - 1",
+                        "Случилось неожиданное событие Attraction. High - 2",
+                        "Случилось неожиданное событие Attraction. High - 3",
+                        "Случилось неожиданное событие Attraction. High - 4",
+                        "Случилось неожиданное событие Attraction. High - 5",
+                    }
+                },
+                {
+                    Danger.VeryHigh,
+                    new List<string>
+                    {
+                        "Случилось неожиданное событие Attraction. VeryHigh - 1",
+                        "Случилось неожиданное событие Attraction. VeryHigh - 2",
+                        "Случилось неожиданное событие Attraction. VeryHigh - 3",
+                        "Случилось неожиданное событие Attraction. VeryHigh - 4",
+                        "Случилось неожиданное событие Attraction. VeryHigh - 5",
+                    }
+                },
+                {
+                    Danger.KnowHabitat,
+                    new List<string>
+                    {
+                        "Случилось неожиданное событие Attraction. KnowHabitat - 1",
+                        "Случилось неожиданное событие Attraction. KnowHabitat - 2",
+                        "Случилось неожиданное событие Attraction. KnowHabitat - 3",
+                        "Случилось неожиданное событие Attraction. KnowHabitat - 4",
+                        "Случилось неожиданное событие Attraction. KnowHabitat - 5",
+                    }
+                },
+            } },
+            { TypeCharacteristic.Inhabitancy, new Dictionary<Danger, List<string>>
+            {
+                {
+                    Danger.VeryLow,
+                    new List<string>
+                    {
+                        "Случилось неожиданное событие Inhabitancy. VeryLow - 1",
+                        "Случилось неожиданное событие Inhabitancy. VeryLow - 2",
+                        "Случилось неожиданное событие Inhabitancy. VeryLow - 3",
+                        "Случилось неожиданное событие Inhabitancy. VeryLow - 4",
+                        "Случилось неожиданное событие Inhabitancy. VeryLow - 5",
+                    }
+                },
+                {
+                    Danger.Low,
+                    new List<string>
+                    {
+                        "Случилось неожиданное событие Inhabitancy. Low - 1",
+                        "Случилось неожиданное событие Inhabitancy. Low - 2",
+                        "Случилось неожиданное событие Inhabitancy. Low - 3",
+                        "Случилось неожиданное событие Inhabitancy. Low - 4",
+                        "Случилось неожиданное событие Inhabitancy. Low - 5",
+                    }
+                },
+                {
+                    Danger.Average,
+                    new List<string>
+                    {
+                        "Случилось неожиданное событие Inhabitancy. Average - 1",
+                        "Случилось неожиданное событие Inhabitancy. Average - 2",
+                        "Случилось неожиданное событие Inhabitancy. Average - 3",
+                        "Случилось неожиданное событие Inhabitancy. Average - 4",
+                        "Случилось неожиданное событие Inhabitancy. Average - 5",
+                    }
+                },
+                {
+                    Danger.High,
+                    new List<string>
+                    {
+                        "Случилось неожиданное событие Inhabitancy. High - 1",
+                        "Случилось неожиданное событие Inhabitancy. High - 2",
+                        "Случилось неожиданное событие Inhabitancy. High - 3",
+                        "Случилось неожиданное событие Inhabitancy. High - 4",
+                        "Случилось неожиданное событие Inhabitancy. High - 5",
+                    }
+                },
+                {
+                    Danger.VeryHigh,
+                    new List<string>
+                    {
+                        "Случилось неожиданное событие Inhabitancy. VeryHigh - 1",
+                        "Случилось неожиданное событие Inhabitancy. VeryHigh - 2",
+                        "Случилось неожиданное событие Inhabitancy. VeryHigh - 3",
+                        "Случилось неожиданное событие Inhabitancy. VeryHigh - 4",
+                        "Случилось неожиданное событие Inhabitancy. VeryHigh - 5",
+                    }
+                },
+                {
+                    Danger.KnowHabitat,
+                    new List<string>
+                    {
+                        "Случилось неожиданное событие Inhabitancy. KnowHabitat - 1",
+                        "Случилось неожиданное событие Inhabitancy. KnowHabitat - 2",
+                        "Случилось неожиданное событие Inhabitancy. KnowHabitat - 3",
+                        "Случилось неожиданное событие Inhabitancy. KnowHabitat - 4",
+                        "Случилось неожиданное событие Inhabitancy. KnowHabitat - 5",
+                    }
+                },
+            } },
+            { TypeCharacteristic.Size, new Dictionary<Danger, List<string>>
+            {
+                {
+                    Danger.VeryLow,
+                    new List<string>
+                    {
+                        "Случилось неожиданное событие Size. VeryLow - 1",
+                        "Случилось неожиданное событие Size. VeryLow - 2",
+                        "Случилось неожиданное событие Size. VeryLow - 3",
+                        "Случилось неожиданное событие Size. VeryLow - 4",
+                        "Случилось неожиданное событие Size. VeryLow - 5",
+                    }
+                },
+                {
+                    Danger.Low,
+                    new List<string>
+                    {
+                        "Случилось неожиданное событие Size. Low - 1",
+                        "Случилось неожиданное событие Size. Low - 2",
+                        "Случилось неожиданное событие Size. Low - 3",
+                        "Случилось неожиданное событие Size. Low - 4",
+                        "Случилось неожиданное событие Size. Low - 5",
+                    }
+                },
+                {
+                    Danger.Average,
+                    new List<string>
+                    {
+                        "Случилось неожиданное событие Size. Average - 1",
+                        "Случилось неожиданное событие Size. Average - 2",
+                        "Случилось неожиданное событие Size. Average - 3",
+                        "Случилось неожиданное событие Size. Average - 4",
+                        "Случилось неожиданное событие Size. Average - 5",
+                    }
+                },
+                {
+                    Danger.High,
+                    new List<string>
+                    {
+                        "Случилось неожиданное событие Size. High - 1",
+                        "Случилось неожиданное событие Size. High - 2",
+                        "Случилось неожиданное событие Size. High - 3",
+                        "Случилось неожиданное событие Size. High - 4",
+                        "Случилось неожиданное событие Size. High - 5",
+                    }
+                },
+                {
+                    Danger.VeryHigh,
+                    new List<string>
+                    {
+                        "Случилось неожиданное событие Size. VeryHigh - 1",
+                        "Случилось неожиданное событие Size. VeryHigh - 2",
+                        "Случилось неожиданное событие Size. VeryHigh - 3",
+                        "Случилось неожиданное событие Size. VeryHigh - 4",
+                        "Случилось неожиданное событие Size. VeryHigh - 5",
+                    }
+                },
+                {
+                    Danger.KnowHabitat,
+                    new List<string>
+                    {
+                        "Случилось неожиданное событие Size. KnowHabitat - 1",
+                        "Случилось неожиданное событие Size. KnowHabitat - 2",
+                        "Случилось неожиданное событие Size. KnowHabitat - 3",
+                        "Случилось неожиданное событие Size. KnowHabitat - 4",
+                        "Случилось неожиданное событие Size. KnowHabitat - 5",
+                    }
+                },
+            } },
+            { TypeCharacteristic.Social, new Dictionary<Danger, List<string>>
+            {
+                {
+                    Danger.VeryLow,
+                    new List<string>
+                    {
+                        "Случилось неожиданное событие Social. VeryLow - 1",
+                        "Случилось неожиданное событие Social. VeryLow - 2",
+                        "Случилось неожиданное событие Social. VeryLow - 3",
+                        "Случилось неожиданное событие Social. VeryLow - 4",
+                        "Случилось неожиданное событие Social. VeryLow - 5",
+                    }
+                },
+                {
+                    Danger.Low,
+                    new List<string>
+                    {
+                        "Случилось неожиданное событие Social. Low - 1",
+                        "Случилось неожиданное событие Social. Low - 2",
+                        "Случилось неожиданное событие Social. Low - 3",
+                        "Случилось неожиданное событие Social. Low - 4",
+                        "Случилось неожиданное событие Social. Low - 5",
+                    }
+                },
+                {
+                    Danger.Average,
+                    new List<string>
+                    {
+                        "Случилось неожиданное событие Social. Average - 1",
+                        "Случилось неожиданное событие Social. Average - 2",
+                        "Случилось неожиданное событие Social. Average - 3",
+                        "Случилось неожиданное событие Social. Average - 4",
+                        "Случилось неожиданное событие Social. Average - 5",
+                    }
+                },
+                {
+                    Danger.High,
+                    new List<string>
+                    {
+                        "Случилось неожиданное событие Social. High - 1",
+                        "Случилось неожиданное событие Social. High - 2",
+                        "Случилось неожиданное событие Social. High - 3",
+                        "Случилось неожиданное событие Social. High - 4",
+                        "Случилось неожиданное событие Social. High - 5",
+                    }
+                },
+                {
+                    Danger.VeryHigh,
+                    new List<string>
+                    {
+                        "Случилось неожиданное событие Social. VeryHigh - 1",
+                        "Случилось неожиданное событие Social. VeryHigh - 2",
+                        "Случилось неожиданное событие Social. VeryHigh - 3",
+                        "Случилось неожиданное событие Social. VeryHigh - 4",
+                        "Случилось неожиданное событие Social. VeryHigh - 5",
+                    }
+                },
+                {
+                    Danger.KnowHabitat,
+                    new List<string>
+                    {
+                        "Случилось неожиданное событие Social. KnowHabitat - 1",
+                        "Случилось неожиданное событие Social. KnowHabitat - 2",
+                        "Случилось неожиданное событие Social. KnowHabitat - 3",
+                        "Случилось неожиданное событие Social. KnowHabitat - 4",
+                        "Случилось неожиданное событие Social. KnowHabitat - 5",
+                    }
+                },
+            } },
+            { TypeCharacteristic.Weak, new Dictionary<Danger, List<string>>
+            {
+                {
+                    Danger.VeryLow,
+                    new List<string>
+                    {
+                        "Случилось неожиданное событие Weak. VeryLow - 1",
+                        "Случилось неожиданное событие Weak. VeryLow - 2",
+                        "Случилось неожиданное событие Weak. VeryLow - 3",
+                        "Случилось неожиданное событие Weak. VeryLow - 4",
+                        "Случилось неожиданное событие Weak. VeryLow - 5",
+                    }
+                },
+                {
+                    Danger.Low,
+                    new List<string>
+                    {
+                        "Случилось неожиданное событие Weak. Low - 1",
+                        "Случилось неожиданное событие Weak. Low - 2",
+                        "Случилось неожиданное событие Weak. Low - 3",
+                        "Случилось неожиданное событие Weak. Low - 4",
+                        "Случилось неожиданное событие Weak. Low - 5",
+                    }
+                },
+                {
+                    Danger.Average,
+                    new List<string>
+                    {
+                        "Случилось неожиданное событие Weak. Average - 1",
+                        "Случилось неожиданное событие Weak. Average - 2",
+                        "Случилось неожиданное событие Weak. Average - 3",
+                        "Случилось неожиданное событие Weak. Average - 4",
+                        "Случилось неожиданное событие Weak. Average - 5",
+                    }
+                },
+                {
+                    Danger.High,
+                    new List<string>
+                    {
+                        "Случилось неожиданное событие Weak. High - 1",
+                        "Случилось неожиданное событие Weak. High - 2",
+                        "Случилось неожиданное событие Weak. High - 3",
+                        "Случилось неожиданное событие Weak. High - 4",
+                        "Случилось неожиданное событие Weak. High - 5",
+                    }
+                },
+                {
+                    Danger.VeryHigh,
+                    new List<string>
+                    {
+                        "Случилось неожиданное событие Weak. VeryHigh - 1",
+                        "Случилось неожиданное событие Weak. VeryHigh - 2",
+                        "Случилось неожиданное событие Weak. VeryHigh - 3",
+                        "Случилось неожиданное событие Weak. VeryHigh - 4",
+                        "Случилось неожиданное событие Weak. VeryHigh - 5",
+                    }
+                },
+                {
+                    Danger.KnowHabitat,
+                    new List<string>
+                    {
+                        "Случилось неожиданное событие Weak. KnowHabitat - 1",
+                        "Случилось неожиданное событие Weak. KnowHabitat - 2",
+                        "Случилось неожиданное событие Weak. KnowHabitat - 3",
+                        "Случилось неожиданное событие Weak. KnowHabitat - 4",
+                        "Случилось неожиданное событие Weak. KnowHabitat - 5",
+                    }
+                },
+            } },
+            { TypeCharacteristic.WeakMetal, new Dictionary<Danger, List<string>>
+            {
+                {
+                    Danger.VeryLow,
+                    new List<string>
+                    {
+                        "Случилось неожиданное событие WeakMetal. VeryLow - 1",
+                        "Случилось неожиданное событие WeakMetal. VeryLow - 2",
+                        "Случилось неожиданное событие WeakMetal. VeryLow - 3",
+                        "Случилось неожиданное событие WeakMetal. VeryLow - 4",
+                        "Случилось неожиданное событие WeakMetal. VeryLow - 5",
+                    }
+                },
+                {
+                    Danger.Low,
+                    new List<string>
+                    {
+                        "Случилось неожиданное событие WeakMetal. Low - 1",
+                        "Случилось неожиданное событие WeakMetal. Low - 2",
+                        "Случилось неожиданное событие WeakMetal. Low - 3",
+                        "Случилось неожиданное событие WeakMetal. Low - 4",
+                        "Случилось неожиданное событие WeakMetal. Low - 5",
+                    }
+                },
+                {
+                    Danger.Average,
+                    new List<string>
+                    {
+                        "Случилось неожиданное событие WeakMetal. Average - 1",
+                        "Случилось неожиданное событие WeakMetal. Average - 2",
+                        "Случилось неожиданное событие WeakMetal. Average - 3",
+                        "Случилось неожиданное событие WeakMetal. Average - 4",
+                        "Случилось неожиданное событие WeakMetal. Average - 5",
+                    }
+                },
+                {
+                    Danger.High,
+                    new List<string>
+                    {
+                        "Случилось неожиданное событие WeakMetal. High - 1",
+                        "Случилось неожиданное событие WeakMetal. High - 2",
+                        "Случилось неожиданное событие WeakMetal. High - 3",
+                        "Случилось неожиданное событие WeakMetal. High - 4",
+                        "Случилось неожиданное событие WeakMetal. High - 5",
+                    }
+                },
+                {
+                    Danger.VeryHigh,
+                    new List<string>
+                    {
+                        "Случилось неожиданное событие WeakMetal. VeryHigh - 1",
+                        "Случилось неожиданное событие WeakMetal. VeryHigh - 2",
+                        "Случилось неожиданное событие WeakMetal. VeryHigh - 3",
+                        "Случилось неожиданное событие WeakMetal. VeryHigh - 4",
+                        "Случилось неожиданное событие WeakMetal. VeryHigh - 5",
+                    }
+                },
+                {
+                    Danger.KnowHabitat,
+                    new List<string>
+                    {
+                        "Случилось неожиданное событие WeakMetal. KnowHabitat - 1",
+                        "Случилось неожиданное событие WeakMetal. KnowHabitat - 2",
+                        "Случилось неожиданное событие WeakMetal. KnowHabitat - 3",
+                        "Случилось неожиданное событие WeakMetal. KnowHabitat - 4",
+                        "Случилось неожиданное событие WeakMetal. KnowHabitat - 5",
+                    }
+                },
+            } },
+        };
+
+        private static Dictionary<TypeCharacteristic, Dictionary<Danger, List<string>>> _textsNotFindDangerHuntingToMonster = new Dictionary<TypeCharacteristic, Dictionary<Danger, List<string>>>
+        {
+                      { TypeCharacteristic.Attraction, new Dictionary<Danger, List<string>>
+            {
+                {
+                    Danger.VeryLow,
+                    new List<string>
+                    {
+                        "Вы случайно узнали о существе Attraction. VeryLow - 1",
+                        "Вы случайно узнали о существе Attraction. VeryLow - 2",
+                        "Вы случайно узнали о существе Attraction. VeryLow - 3",
+                        "Вы случайно узнали о существе Attraction. VeryLow - 4",
+                        "Вы случайно узнали о существе Attraction. VeryLow - 5",
+                    }
+                },
+                {
+                    Danger.Low,
+                    new List<string>
+                    {
+                        "Вы случайно узнали о существе Attraction. Low - 1",
+                        "Вы случайно узнали о существе Attraction. Low - 2",
+                        "Вы случайно узнали о существе Attraction. Low - 3",
+                        "Вы случайно узнали о существе Attraction. Low - 4",
+                        "Вы случайно узнали о существе Attraction. Low - 5",
+                    }
+                },
+                {
+                    Danger.Average,
+                    new List<string>
+                    {
+                        "Вы случайно узнали о существе Attraction. Average - 1",
+                        "Вы случайно узнали о существе Attraction. Average - 2",
+                        "Вы случайно узнали о существе Attraction. Average - 3",
+                        "Вы случайно узнали о существе Attraction. Average - 4",
+                        "Вы случайно узнали о существе Attraction. Average - 5",
+                    }
+                },
+                {
+                    Danger.High,
+                    new List<string>
+                    {
+                        "Вы случайно узнали о существе Attraction. High - 1",
+                        "Вы случайно узнали о существе Attraction. High - 2",
+                        "Вы случайно узнали о существе Attraction. High - 3",
+                        "Вы случайно узнали о существе Attraction. High - 4",
+                        "Вы случайно узнали о существе Attraction. High - 5",
+                    }
+                },
+                {
+                    Danger.VeryHigh,
+                    new List<string>
+                    {
+                        "Вы случайно узнали о существе Attraction. VeryHigh - 1",
+                        "Вы случайно узнали о существе Attraction. VeryHigh - 2",
+                        "Вы случайно узнали о существе Attraction. VeryHigh - 3",
+                        "Вы случайно узнали о существе Attraction. VeryHigh - 4",
+                        "Вы случайно узнали о существе Attraction. VeryHigh - 5",
+                    }
+                },
+                {
+                    Danger.KnowHabitat,
+                    new List<string>
+                    {
+                        "Вы случайно узнали о существе Attraction. KnowHabitat - 1",
+                        "Вы случайно узнали о существе Attraction. KnowHabitat - 2",
+                        "Вы случайно узнали о существе Attraction. KnowHabitat - 3",
+                        "Вы случайно узнали о существе Attraction. KnowHabitat - 4",
+                        "Вы случайно узнали о существе Attraction. KnowHabitat - 5",
+                    }
+                },
+            } },
+            { TypeCharacteristic.Inhabitancy, new Dictionary<Danger, List<string>>
+            {
+                {
+                    Danger.VeryLow,
+                    new List<string>
+                    {
+                        "Вы случайно узнали о существе Inhabitancy. VeryLow - 1",
+                        "Вы случайно узнали о существе Inhabitancy. VeryLow - 2",
+                        "Вы случайно узнали о существе Inhabitancy. VeryLow - 3",
+                        "Вы случайно узнали о существе Inhabitancy. VeryLow - 4",
+                        "Вы случайно узнали о существе Inhabitancy. VeryLow - 5",
+                    }
+                },
+                {
+                    Danger.Low,
+                    new List<string>
+                    {
+                        "Вы случайно узнали о существе Inhabitancy. Low - 1",
+                        "Вы случайно узнали о существе Inhabitancy. Low - 2",
+                        "Вы случайно узнали о существе Inhabitancy. Low - 3",
+                        "Вы случайно узнали о существе Inhabitancy. Low - 4",
+                        "Вы случайно узнали о существе Inhabitancy. Low - 5",
+                    }
+                },
+                {
+                    Danger.Average,
+                    new List<string>
+                    {
+                        "Вы случайно узнали о существе Inhabitancy. Average - 1",
+                        "Вы случайно узнали о существе Inhabitancy. Average - 2",
+                        "Вы случайно узнали о существе Inhabitancy. Average - 3",
+                        "Вы случайно узнали о существе Inhabitancy. Average - 4",
+                        "Вы случайно узнали о существе Inhabitancy. Average - 5",
+                    }
+                },
+                {
+                    Danger.High,
+                    new List<string>
+                    {
+                        "Вы случайно узнали о существе Inhabitancy. High - 1",
+                        "Вы случайно узнали о существе Inhabitancy. High - 2",
+                        "Вы случайно узнали о существе Inhabitancy. High - 3",
+                        "Вы случайно узнали о существе Inhabitancy. High - 4",
+                        "Вы случайно узнали о существе Inhabitancy. High - 5",
+                    }
+                },
+                {
+                    Danger.VeryHigh,
+                    new List<string>
+                    {
+                        "Вы случайно узнали о существе Inhabitancy. VeryHigh - 1",
+                        "Вы случайно узнали о существе Inhabitancy. VeryHigh - 2",
+                        "Вы случайно узнали о существе Inhabitancy. VeryHigh - 3",
+                        "Вы случайно узнали о существе Inhabitancy. VeryHigh - 4",
+                        "Вы случайно узнали о существе Inhabitancy. VeryHigh - 5",
+                    }
+                },
+                {
+                    Danger.KnowHabitat,
+                    new List<string>
+                    {
+                        "Вы случайно узнали о существе Inhabitancy. KnowHabitat - 1",
+                        "Вы случайно узнали о существе Inhabitancy. KnowHabitat - 2",
+                        "Вы случайно узнали о существе Inhabitancy. KnowHabitat - 3",
+                        "Вы случайно узнали о существе Inhabitancy. KnowHabitat - 4",
+                        "Вы случайно узнали о существе Inhabitancy. KnowHabitat - 5",
+                    }
+                },
+            } },
+            { TypeCharacteristic.Size, new Dictionary<Danger, List<string>>
+            {
+                {
+                    Danger.VeryLow,
+                    new List<string>
+                    {
+                        "Вы случайно узнали о существе Size. VeryLow - 1",
+                        "Вы случайно узнали о существе Size. VeryLow - 2",
+                        "Вы случайно узнали о существе Size. VeryLow - 3",
+                        "Вы случайно узнали о существе Size. VeryLow - 4",
+                        "Вы случайно узнали о существе Size. VeryLow - 5",
+                    }
+                },
+                {
+                    Danger.Low,
+                    new List<string>
+                    {
+                        "Вы случайно узнали о существе Size. Low - 1",
+                        "Вы случайно узнали о существе Size. Low - 2",
+                        "Вы случайно узнали о существе Size. Low - 3",
+                        "Вы случайно узнали о существе Size. Low - 4",
+                        "Вы случайно узнали о существе Size. Low - 5",
+                    }
+                },
+                {
+                    Danger.Average,
+                    new List<string>
+                    {
+                        "Вы случайно узнали о существе Size. Average - 1",
+                        "Вы случайно узнали о существе Size. Average - 2",
+                        "Вы случайно узнали о существе Size. Average - 3",
+                        "Вы случайно узнали о существе Size. Average - 4",
+                        "Вы случайно узнали о существе Size. Average - 5",
+                    }
+                },
+                {
+                    Danger.High,
+                    new List<string>
+                    {
+                        "Вы случайно узнали о существе Size. High - 1",
+                        "Вы случайно узнали о существе Size. High - 2",
+                        "Вы случайно узнали о существе Size. High - 3",
+                        "Вы случайно узнали о существе Size. High - 4",
+                        "Вы случайно узнали о существе Size. High - 5",
+                    }
+                },
+                {
+                    Danger.VeryHigh,
+                    new List<string>
+                    {
+                        "Вы случайно узнали о существе Size. VeryHigh - 1",
+                        "Вы случайно узнали о существе Size. VeryHigh - 2",
+                        "Вы случайно узнали о существе Size. VeryHigh - 3",
+                        "Вы случайно узнали о существе Size. VeryHigh - 4",
+                        "Вы случайно узнали о существе Size. VeryHigh - 5",
+                    }
+                },
+                {
+                    Danger.KnowHabitat,
+                    new List<string>
+                    {
+                        "Вы случайно узнали о существе Size. KnowHabitat - 1",
+                        "Вы случайно узнали о существе Size. KnowHabitat - 2",
+                        "Вы случайно узнали о существе Size. KnowHabitat - 3",
+                        "Вы случайно узнали о существе Size. KnowHabitat - 4",
+                        "Вы случайно узнали о существе Size. KnowHabitat - 5",
+                    }
+                },
+            } },
+            { TypeCharacteristic.Social, new Dictionary<Danger, List<string>>
+            {
+                {
+                    Danger.VeryLow,
+                    new List<string>
+                    {
+                        "Вы случайно узнали о существе Social. VeryLow - 1",
+                        "Вы случайно узнали о существе Social. VeryLow - 2",
+                        "Вы случайно узнали о существе Social. VeryLow - 3",
+                        "Вы случайно узнали о существе Social. VeryLow - 4",
+                        "Вы случайно узнали о существе Social. VeryLow - 5",
+                    }
+                },
+                {
+                    Danger.Low,
+                    new List<string>
+                    {
+                        "Вы случайно узнали о существе Social. Low - 1",
+                        "Вы случайно узнали о существе Social. Low - 2",
+                        "Вы случайно узнали о существе Social. Low - 3",
+                        "Вы случайно узнали о существе Social. Low - 4",
+                        "Вы случайно узнали о существе Social. Low - 5",
+                    }
+                },
+                {
+                    Danger.Average,
+                    new List<string>
+                    {
+                        "Вы случайно узнали о существе Social. Average - 1",
+                        "Вы случайно узнали о существе Social. Average - 2",
+                        "Вы случайно узнали о существе Social. Average - 3",
+                        "Вы случайно узнали о существе Social. Average - 4",
+                        "Вы случайно узнали о существе Social. Average - 5",
+                    }
+                },
+                {
+                    Danger.High,
+                    new List<string>
+                    {
+                        "Вы случайно узнали о существе Social. High - 1",
+                        "Вы случайно узнали о существе Social. High - 2",
+                        "Вы случайно узнали о существе Social. High - 3",
+                        "Вы случайно узнали о существе Social. High - 4",
+                        "Вы случайно узнали о существе Social. High - 5",
+                    }
+                },
+                {
+                    Danger.VeryHigh,
+                    new List<string>
+                    {
+                        "Вы случайно узнали о существе Social. VeryHigh - 1",
+                        "Вы случайно узнали о существе Social. VeryHigh - 2",
+                        "Вы случайно узнали о существе Social. VeryHigh - 3",
+                        "Вы случайно узнали о существе Social. VeryHigh - 4",
+                        "Вы случайно узнали о существе Social. VeryHigh - 5",
+                    }
+                },
+                {
+                    Danger.KnowHabitat,
+                    new List<string>
+                    {
+                        "Вы случайно узнали о существе Social. KnowHabitat - 1",
+                        "Вы случайно узнали о существе Social. KnowHabitat - 2",
+                        "Вы случайно узнали о существе Social. KnowHabitat - 3",
+                        "Вы случайно узнали о существе Social. KnowHabitat - 4",
+                        "Вы случайно узнали о существе Social. KnowHabitat - 5",
+                    }
+                },
+            } },
+            { TypeCharacteristic.Weak, new Dictionary<Danger, List<string>>
+            {
+                {
+                    Danger.VeryLow,
+                    new List<string>
+                    {
+                        "Вы случайно узнали о существе Weak. VeryLow - 1",
+                        "Вы случайно узнали о существе Weak. VeryLow - 2",
+                        "Вы случайно узнали о существе Weak. VeryLow - 3",
+                        "Вы случайно узнали о существе Weak. VeryLow - 4",
+                        "Вы случайно узнали о существе Weak. VeryLow - 5",
+                    }
+                },
+                {
+                    Danger.Low,
+                    new List<string>
+                    {
+                        "Вы случайно узнали о существе Weak. Low - 1",
+                        "Вы случайно узнали о существе Weak. Low - 2",
+                        "Вы случайно узнали о существе Weak. Low - 3",
+                        "Вы случайно узнали о существе Weak. Low - 4",
+                        "Вы случайно узнали о существе Weak. Low - 5",
+                    }
+                },
+                {
+                    Danger.Average,
+                    new List<string>
+                    {
+                        "Вы случайно узнали о существе Weak. Average - 1",
+                        "Вы случайно узнали о существе Weak. Average - 2",
+                        "Вы случайно узнали о существе Weak. Average - 3",
+                        "Вы случайно узнали о существе Weak. Average - 4",
+                        "Вы случайно узнали о существе Weak. Average - 5",
+                    }
+                },
+                {
+                    Danger.High,
+                    new List<string>
+                    {
+                        "Вы случайно узнали о существе Weak. High - 1",
+                        "Вы случайно узнали о существе Weak. High - 2",
+                        "Вы случайно узнали о существе Weak. High - 3",
+                        "Вы случайно узнали о существе Weak. High - 4",
+                        "Вы случайно узнали о существе Weak. High - 5",
+                    }
+                },
+                {
+                    Danger.VeryHigh,
+                    new List<string>
+                    {
+                        "Вы случайно узнали о существе Weak. VeryHigh - 1",
+                        "Вы случайно узнали о существе Weak. VeryHigh - 2",
+                        "Вы случайно узнали о существе Weak. VeryHigh - 3",
+                        "Вы случайно узнали о существе Weak. VeryHigh - 4",
+                        "Вы случайно узнали о существе Weak. VeryHigh - 5",
+                    }
+                },
+                {
+                    Danger.KnowHabitat,
+                    new List<string>
+                    {
+                        "Вы случайно узнали о существе Weak. KnowHabitat - 1",
+                        "Вы случайно узнали о существе Weak. KnowHabitat - 2",
+                        "Вы случайно узнали о существе Weak. KnowHabitat - 3",
+                        "Вы случайно узнали о существе Weak. KnowHabitat - 4",
+                        "Вы случайно узнали о существе Weak. KnowHabitat - 5",
+                    }
+                },
+            } },
+            { TypeCharacteristic.WeakMetal, new Dictionary<Danger, List<string>>
+            {
+                {
+                    Danger.VeryLow,
+                    new List<string>
+                    {
+                        "Вы случайно узнали о существе WeakMetal. VeryLow - 1",
+                        "Вы случайно узнали о существе WeakMetal. VeryLow - 2",
+                        "Вы случайно узнали о существе WeakMetal. VeryLow - 3",
+                        "Вы случайно узнали о существе WeakMetal. VeryLow - 4",
+                        "Вы случайно узнали о существе WeakMetal. VeryLow - 5",
+                    }
+                },
+                {
+                    Danger.Low,
+                    new List<string>
+                    {
+                        "Вы случайно узнали о существе WeakMetal. Low - 1",
+                        "Вы случайно узнали о существе WeakMetal. Low - 2",
+                        "Вы случайно узнали о существе WeakMetal. Low - 3",
+                        "Вы случайно узнали о существе WeakMetal. Low - 4",
+                        "Вы случайно узнали о существе WeakMetal. Low - 5",
+                    }
+                },
+                {
+                    Danger.Average,
+                    new List<string>
+                    {
+                        "Вы случайно узнали о существе WeakMetal. Average - 1",
+                        "Вы случайно узнали о существе WeakMetal. Average - 2",
+                        "Вы случайно узнали о существе WeakMetal. Average - 3",
+                        "Вы случайно узнали о существе WeakMetal. Average - 4",
+                        "Вы случайно узнали о существе WeakMetal. Average - 5",
+                    }
+                },
+                {
+                    Danger.High,
+                    new List<string>
+                    {
+                        "Вы случайно узнали о существе WeakMetal. High - 1",
+                        "Вы случайно узнали о существе WeakMetal. High - 2",
+                        "Вы случайно узнали о существе WeakMetal. High - 3",
+                        "Вы случайно узнали о существе WeakMetal. High - 4",
+                        "Вы случайно узнали о существе WeakMetal. High - 5",
+                    }
+                },
+                {
+                    Danger.VeryHigh,
+                    new List<string>
+                    {
+                        "Вы случайно узнали о существе WeakMetal. VeryHigh - 1",
+                        "Вы случайно узнали о существе WeakMetal. VeryHigh - 2",
+                        "Вы случайно узнали о существе WeakMetal. VeryHigh - 3",
+                        "Вы случайно узнали о существе WeakMetal. VeryHigh - 4",
+                        "Вы случайно узнали о существе WeakMetal. VeryHigh - 5",
+                    }
+                },
+                {
+                    Danger.KnowHabitat,
+                    new List<string>
+                    {
+                        "Вы случайно узнали о существе WeakMetal. KnowHabitat - 1",
+                        "Вы случайно узнали о существе WeakMetal. KnowHabitat - 2",
+                        "Вы случайно узнали о существе WeakMetal. KnowHabitat - 3",
+                        "Вы случайно узнали о существе WeakMetal. KnowHabitat - 4",
+                        "Вы случайно узнали о существе WeakMetal. KnowHabitat - 5",
+                    }
+                },
+            } },
+        };
+
+        private static Dictionary<Danger, List<string>> _textsFindDangerHuntingToMonster = new Dictionary<Danger, List<string>>
+        {
+            {
+                    Danger.VeryLow,
+                    new List<string>
+                    {
+                        "На вас напало существо. VeryLow - 1",
+                        "На вас напало существо. VeryLow - 2",
+                        "На вас напало существо. VeryLow - 3",
+                        "На вас напало существо. VeryLow - 4",
+                        "На вас напало существо. VeryLow - 5",
+                    }
+                },
+                {
+                    Danger.Low,
+                    new List<string>
+                    {
+                        "На вас напало существо. Low - 1",
+                        "На вас напало существо. Low - 2",
+                        "На вас напало существо. Low - 3",
+                        "На вас напало существо. Low - 4",
+                        "На вас напало существо. Low - 5",
+                    }
+                },
+                {
+                    Danger.Average,
+                    new List<string>
+                    {
+                        "На вас напало существо. Average - 1",
+                        "На вас напало существо. Average - 2",
+                        "На вас напало существо. Average - 3",
+                        "На вас напало существо. Average - 4",
+                        "На вас напало существо. Average - 5",
+                    }
+                },
+                {
+                    Danger.High,
+                    new List<string>
+                    {
+                        "На вас напало существо. High - 1",
+                        "На вас напало существо. High - 2",
+                        "На вас напало существо. High - 3",
+                        "На вас напало существо. High - 4",
+                        "На вас напало существо. High - 5",
+                    }
+                },
+                {
+                    Danger.VeryHigh,
+                    new List<string>
+                    {
+                        "На вас напало существо. VeryHigh - 1",
+                        "На вас напало существо. VeryHigh - 2",
+                        "На вас напало существо. VeryHigh - 3",
+                        "На вас напало существо. VeryHigh - 4",
+                        "На вас напало существо. VeryHigh - 5",
+                    }
+                },
+                {
+                    Danger.KnowHabitat,
+                    new List<string>
+                    {
+                        "Вы пришли к жилищу существа. KnowHabitat - 1",
+                        "Вы пришли к жилищу существа. KnowHabitat - 2",
+                        "Вы пришли к жилищу существа. KnowHabitat - 3",
+                        "Вы пришли к жилищу существа. KnowHabitat - 4",
+                        "Вы пришли к жилищу существа. KnowHabitat - 5",
+                    }
+                },
+        };
+
+        private static Dictionary<TypeCharacteristic, List<string>> _textsInvestigation = new Dictionary<TypeCharacteristic, List<string>>
         {
             { TypeCharacteristic.Attraction, new List<string>
             {
@@ -100,7 +1006,6 @@ namespace HuntingСores
                 "Вы видели сегодня как монстр напал на охранника и это было так стремительно. Но мо монстр ушел как тень в лесу. Но вы запомнили что у охранника было оружие из определенного материала.",
                 "К вам подошли беспардонно люди в баре. Потребовали отомстить монстру за их родственника. Это было сегодня ночью. Но они запомнили что монстр испугался определенного орудия в руках у родственника."
             } },
-
         };
 
 
@@ -110,35 +1015,95 @@ namespace HuntingСores
             var _extension = new Extension();
             var _question = new Questions();
 
-            var engine = new Engine_Investigation(1000, _monsters[0], new Person(), _texts);
+            var engine_num = int.Parse(_question.Question<string>(
+                        $"Выберите движок игры расследование или охота. (Нажмите 1 или 2)",
+                        new HashSet<char> { '1', '2' }, true));
 
-            while(!engine.IsMonsterFind())
+            if (engine_num == 1)
             {
+                var engine = new Engine_Investigation(1000, _monsters[(new Random()).Next(0, _monsters.Count - 1)], new Person(), _textsInvestigation);
+                while (!engine.IsMonsterFind())
+                {
+                    _extension.Pause(2000);
+                    var step = engine.NextEvent(25);
+                    WriteLine(step.Item1);
+                    if (step.Item2.Count > 1)
+                    {
+                        engine.Answer(step.Item2[int.Parse(_question.Question<string>(
+                            $"Повидемому это { step.Item2[0].Name } или { step.Item2[1].Name }. (Нажмите 1 или 2)",
+                            new HashSet<char> { '1', '2' }, true)) - 1]);
+                    }
+                    else
+                    {
+                        WriteLine($"{ step.Item2[0].Name}");
+                        engine.Answer(step.Item2[0]);
+                    }
+
+
+
+                    WriteLine($"Количество подозреваемых { engine.GetSurmise().Count }");
+                    WriteLine("Вы {0}", engine.IsMonsterFind() ? "нашли монстра. Поздравляю." : "не нашли еще монстра.");
+                }
+
+                WriteLine("!!!");
+                _extension.Print("Подготовтесь к взятию монстра.", PositionForRow.LeftEdge, Console.CursorTop + 2);
+
                 _extension.Pause(3000);
-                var step = engine.NextEvent(25);
-                WriteLine(step.Item1);
-                if (step.Item2.Count > 1)
-                {
-                    engine.Answer(step.Item2[int.Parse(_question.Question<string>(
-                        $"Повидемому это { step.Item2[0].Name } или { step.Item2[1].Name }. (Нажмите 1 или 2)", 
-                        new HashSet<char> { '1', '2' }, true)) - 1]);
-                }
-                else
-                {
-                    WriteLine($"{ step.Item2[0].Name}");
-                    engine.Answer(step.Item2[0]);
-                }
-
-
-
-                WriteLine($"Количество подозреваемых { engine.GetSurmise().Count }");
-                WriteLine("Вы {0}", engine.IsMonsterFind() ? "нашли монстра. Поздравляю." : "не нашли еще монстра.");
             }
+            else if (engine_num == 2)
+            {
+                var engine = new Engine_HuntingToMonster(_monsters[(new Random()).Next(0, _monsters.Count - 1)], 10000, _textsEventsHuntingToMonster, _textsNotFindDangerHuntingToMonster, _textsFindDangerHuntingToMonster);
+                var skillPathfinder = 50;
+                var luck = 50;
 
-            WriteLine("!!!");
-            _extension.Print("Подготовтесь к взятию монстра.", PositionForRow.LeftEdge, Console.CursorTop + 2);
+                while (true)
+                {
+                    _extension.Pause(2000);
+                    WriteLine("Случилось событие:");
+                    var _event = engine.NextEvent(50);
+                    WriteLine(_event);
+                    WriteLine($"Возможно событие имеет {engine.GetLevelDanger(luck)} уровень опасности.");
 
-            _extension.Pause(2000);
+                    var isSearch = int.Parse(_question.Question<string>($"Вы пойдете осматривать место события? (да - 1, нет - 2)",
+                            new HashSet<char> { '1', '2' }, true));
+                    
+                    if(isSearch == 1)
+                    {
+                        var getState = engine.TryFindMonster(luck, skillPathfinder);
+
+                        if(getState.FindMonster && engine.ChanceDanger == Danger.KnowHabitat)
+                        {
+                            WriteLine("Вы нашли место обитания монстра!");
+                        }
+
+                        WriteLine(getState.Text);
+
+                        if(getState.NewKnowCharact.Name == NameCharacteristic.Unknown)
+                        {
+                            WriteLine("Вы ничего нового не узнали о существе.");
+                        }
+                        else
+                        {
+                            WriteLine($"Вы узнали о существе: {getState.NewKnowCharact.Name}");
+                        }
+                    }
+
+
+                    if (engine.IsMonsterHabitatFind())
+                    {
+                        var isHunting = int.Parse(_question.Question<string>(
+                            $"Вы пойдете охотиться на существо? (да - 1, нет - 2)",
+                            new HashSet<char> { '1', '2' }, true));
+                        if (isHunting == 1) break;
+                    }
+                }
+
+                WriteLine("!!!");
+                _extension.Print("Подготовтесь к охоте на монстра и удачи.", PositionForRow.LeftEdge, Console.CursorTop + 2);
+
+                _extension.Pause(3000);
+
+            }
         }
     }
 }

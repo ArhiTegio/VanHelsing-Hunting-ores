@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HuntingСores
 {
-    public class Engine_Investigation
+    public class Engine_Investigation : Engine_Basic
     {
         private Person _monster;
         private List<Person> _listAllPerson;

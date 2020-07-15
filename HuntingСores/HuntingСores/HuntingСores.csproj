@@ -47,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Engines\Engine-Basic.cs" />
+    <Compile Include="Engines\Engine-HuntingToMonster.cs" />
     <Compile Include="Engines\Engine-Investigation.cs" />
     <Compile Include="Persons\Characteristics.cs" />
     <Compile Include="Persons\Location.cs" />
