@@ -14,6 +14,7 @@ namespace HuntingСores
         {
             new Person {
                 Name = "Анималии",
+                Location = new List<LocationVisit>{ LocationVisit.Plain },
                 Characteristics = new List<Characteristic>
                 {
                     new Characteristic(TypeCharacteristic.Size, NameCharacteristic.Size_Half),
@@ -26,6 +27,7 @@ namespace HuntingСores
 
             new Person {
                 Name = "Менталии",
+                Location = new List<LocationVisit> { LocationVisit.Forest },
                 Characteristics = new List<Characteristic>
                 {
                     new Characteristic(TypeCharacteristic.Size, NameCharacteristic.Size_Abreast),
@@ -39,6 +41,7 @@ namespace HuntingСores
 
             new Person {
                 Name = "Спиритуалии",
+                Location = new List<LocationVisit> { LocationVisit.Mountains, LocationVisit.MountainForest },
                 Characteristics = new List<Characteristic>
                 {
                     new Characteristic(TypeCharacteristic.Size, NameCharacteristic.Size_Double),
@@ -51,6 +54,7 @@ namespace HuntingСores
 
             new Person {
                 Name = "Паразиталии",
+                Location = new List<LocationVisit> { LocationVisit.Swamp, LocationVisit.MunicipalSewerage },
                 Characteristics = new List<Characteristic>
                 {
                     new Characteristic(TypeCharacteristic.Size, NameCharacteristic.Size_Gigant),
@@ -1008,102 +1012,108 @@ namespace HuntingСores
             } },
         };
 
-
+        public static Random _random = new Random();
 
         static void Main(string[] args)
         {
-            var _extension = new Extension();
-            var _question = new Questions();
-
-            var engine_num = int.Parse(_question.Question<string>(
-                        $"Выберите движок игры расследование или охота. (Нажмите 1 или 2)",
-                        new HashSet<char> { '1', '2' }, true));
-
-            if (engine_num == 1)
-            {
-                var engine = new Engine_Investigation(1000, _monsters[(new Random()).Next(0, _monsters.Count - 1)], new Person(), _textsInvestigation);
-                while (!engine.IsMonsterFind())
-                {
-                    _extension.Pause(2000);
-                    var step = engine.NextEvent(25);
-                    WriteLine(step.Item1);
-                    if (step.Item2.Count > 1)
-                    {
-                        engine.Answer(step.Item2[int.Parse(_question.Question<string>(
-                            $"Повидемому это { step.Item2[0].Name } или { step.Item2[1].Name }. (Нажмите 1 или 2)",
-                            new HashSet<char> { '1', '2' }, true)) - 1]);
-                    }
-                    else
-                    {
-                        WriteLine($"{ step.Item2[0].Name}");
-                        engine.Answer(step.Item2[0]);
-                    }
-
-
-
-                    WriteLine($"Количество подозреваемых { engine.GetSurmise().Count }");
-                    WriteLine("Вы {0}", engine.IsMonsterFind() ? "нашли монстра. Поздравляю." : "не нашли еще монстра.");
-                }
-
-                WriteLine("!!!");
-                _extension.Print("Подготовтесь к взятию монстра.", PositionForRow.LeftEdge, Console.CursorTop + 2);
-
-                _extension.Pause(3000);
-            }
-            else if (engine_num == 2)
-            {
-                var engine = new Engine_HuntingToMonster(_monsters[(new Random()).Next(0, _monsters.Count - 1)], 10000, _textsEventsHuntingToMonster, _textsNotFindDangerHuntingToMonster, _textsFindDangerHuntingToMonster);
-                var skillPathfinder = 50;
-                var luck = 50;
-
-                while (true)
-                {
-                    _extension.Pause(2000);
-                    WriteLine("Случилось событие:");
-                    var _event = engine.NextEvent(50);
-                    WriteLine(_event);
-                    WriteLine($"Возможно событие имеет {engine.GetLevelDanger(luck)} уровень опасности.");
-
-                    var isSearch = int.Parse(_question.Question<string>($"Вы пойдете осматривать место события? (да - 1, нет - 2)",
-                            new HashSet<char> { '1', '2' }, true));
-                    
-                    if(isSearch == 1)
-                    {
-                        var getState = engine.TryFindMonster(luck, skillPathfinder);
-
-                        if(getState.FindMonster && engine.ChanceDanger == Danger.KnowHabitat)
-                        {
-                            WriteLine("Вы нашли место обитания монстра!");
-                        }
-
-                        WriteLine(getState.Text);
-
-                        if(getState.NewKnowCharact.Name == NameCharacteristic.Unknown)
-                        {
-                            WriteLine("Вы ничего нового не узнали о существе.");
-                        }
-                        else
-                        {
-                            WriteLine($"Вы узнали о существе: {getState.NewKnowCharact.Name}");
-                        }
-                    }
-
-
-                    if (engine.IsMonsterHabitatFind())
-                    {
-                        var isHunting = int.Parse(_question.Question<string>(
-                            $"Вы пойдете охотиться на существо? (да - 1, нет - 2)",
-                            new HashSet<char> { '1', '2' }, true));
-                        if (isHunting == 1) break;
-                    }
-                }
-
-                WriteLine("!!!");
-                _extension.Print("Подготовтесь к охоте на монстра и удачи.", PositionForRow.LeftEdge, Console.CursorTop + 2);
-
-                _extension.Pause(3000);
-
-            }
+            var en = new Engine_Reverse(_monsters[_random.Next(0, _monsters.Count)]);
         }
+
+
+        //static void Main(string[] args)
+        //{
+        //    var _extension = new Extension();
+        //    var _question = new Questions();
+
+        //    var engine_num = int.Parse(_question.Question<string>(
+        //                $"Выберите движок игры расследование или охота. (Нажмите 1 или 2)",
+        //                new HashSet<char> { '1', '2' }, true));
+
+        //    if (engine_num == 1)
+        //    {
+        //        var engine = new Engine_Investigation(1000, _monsters[(new Random()).Next(0, _monsters.Count - 1)], new Person(), _textsInvestigation);
+        //        while (!engine.IsMonsterFind())
+        //        {
+        //            _extension.Pause(2000);
+        //            var step = engine.NextEvent(25);
+        //            WriteLine(step.Item1);
+        //            if (step.Item2.Count > 1)
+        //            {
+        //                engine.Answer(step.Item2[int.Parse(_question.Question<string>(
+        //                    $"Повидемому это { step.Item2[0].Name } или { step.Item2[1].Name }. (Нажмите 1 или 2)",
+        //                    new HashSet<char> { '1', '2' }, true)) - 1]);
+        //            }
+        //            else
+        //            {
+        //                WriteLine($"{ step.Item2[0].Name}");
+        //                engine.Answer(step.Item2[0]);
+        //            }
+
+
+
+        //            WriteLine($"Количество подозреваемых { engine.GetSurmise().Count }");
+        //            WriteLine("Вы {0}", engine.IsMonsterFind() ? "нашли монстра. Поздравляю." : "не нашли еще монстра.");
+        //        }
+
+        //        WriteLine("!!!");
+        //        _extension.Print("Подготовтесь к взятию монстра.", PositionForRow.LeftEdge, Console.CursorTop + 2);
+
+        //        _extension.Pause(3000);
+        //    }
+        //    else if (engine_num == 2)
+        //    {
+        //        var engine = new Engine_HuntingToMonster(_monsters[(new Random()).Next(0, _monsters.Count - 1)], 10000, _textsEventsHuntingToMonster, _textsNotFindDangerHuntingToMonster, _textsFindDangerHuntingToMonster);
+        //        var skillPathfinder = 50;
+        //        var luck = 50;
+
+        //        while (true)
+        //        {
+        //            _extension.Pause(2000);
+        //            WriteLine("Случилось событие:");
+        //            var _event = engine.NextEvent(50);
+        //            WriteLine(_event);
+        //            WriteLine($"Возможно событие имеет {engine.GetLevelDanger(luck)} уровень опасности.");
+
+        //            var isSearch = int.Parse(_question.Question<string>($"Вы пойдете осматривать место события? (да - 1, нет - 2)",
+        //                    new HashSet<char> { '1', '2' }, true));
+
+        //            if(isSearch == 1)
+        //            {
+        //                var getState = engine.TryFindMonster(luck, skillPathfinder);
+
+        //                if(getState.FindMonster && engine.ChanceDanger == Danger.KnowHabitat)
+        //                {
+        //                    WriteLine("Вы нашли место обитания монстра!");
+        //                }
+
+        //                WriteLine(getState.Text);
+
+        //                if(getState.NewKnowCharact.Name == NameCharacteristic.Unknown)
+        //                {
+        //                    WriteLine("Вы ничего нового не узнали о существе.");
+        //                }
+        //                else
+        //                {
+        //                    WriteLine($"Вы узнали о существе: {getState.NewKnowCharact.Name}");
+        //                }
+        //            }
+
+
+        //            if (engine.IsMonsterHabitatFind())
+        //            {
+        //                var isHunting = int.Parse(_question.Question<string>(
+        //                    $"Вы пойдете охотиться на существо? (да - 1, нет - 2)",
+        //                    new HashSet<char> { '1', '2' }, true));
+        //                if (isHunting == 1) break;
+        //            }
+        //        }
+
+        //        WriteLine("!!!");
+        //        _extension.Print("Подготовтесь к охоте на монстра и удачи.", PositionForRow.LeftEdge, Console.CursorTop + 2);
+
+        //        _extension.Pause(3000);
+
+        //    }
+        //}
     }
 }

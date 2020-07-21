@@ -17,7 +17,6 @@ namespace HuntingСores
             Type = type;
         }
 
-
         public static Dictionary<TypeCharacteristic, List<Characteristic>> AllCharacteristics = new Dictionary<TypeCharacteristic, List<Characteristic>>
         {
             { TypeCharacteristic.Attraction, new List<Characteristic>
@@ -84,5 +83,5 @@ namespace HuntingСores
         Attraction_Light, Attraction_LoudSound, Attraction_FlowingWater, Attraction_SmellHunter,
         Weak_ThinLeg, Weak_GoiterThroat, Weak_ManeBack, Weak_Water,
         WeakMetal_Silver, WeakMetal_Acid, WeakMetal_Gold, WeakMetal_Wood
-    }
+    }    
 }

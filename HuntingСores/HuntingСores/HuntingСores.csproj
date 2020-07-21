@@ -50,10 +50,10 @@
     <Compile Include="Engines\Engine-Basic.cs" />
     <Compile Include="Engines\Engine-HuntingToMonster.cs" />
     <Compile Include="Engines\Engine-Investigation.cs" />
+    <Compile Include="Engines\Engine-Reverse.cs" />
     <Compile Include="Persons\Characteristics.cs" />
     <Compile Include="Persons\Location.cs" />
     <Compile Include="Persons\Person.cs" />
-    <Compile Include="Persons\Specialization.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

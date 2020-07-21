@@ -10,7 +10,9 @@ namespace HuntingСores
     {
         public string Name;
 
-        public Location Location;
+        public List<LocationVisit> Location;
+
+        public Specialization Specialization;
 
         public List<Characteristic> Characteristics = new List<Characteristic>();
     }
